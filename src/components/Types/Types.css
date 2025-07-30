@@ -1,16 +1,33 @@
-.types {
+.types-container {
+  position: absolute;
+  bottom: 20px;       /* Ajusta según dónde quieres que quede */
+  left: 50%;
+  transform: translateX(-50%);
   display: flex;
   gap: 8px;
-  margin-top: 8px;
+  flex-wrap: wrap;
+  justify-content: center;
+  
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
 }
 
+/* Mostrar tipos al hacer hover en la tarjeta (padre) */
+.pokemon:hover .types-container {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* Los estilos de .type y colores igual que tienes */
 .type {
-  padding: 4px 8px;
+  padding: 4px 10px;
   border-radius: 12px;
-  font-size: 0.9rem;
-  font-weight: 500;
+  font-size: 14px;
+  font-weight: bold;
   text-transform: capitalize;
 }
+
 
 /* Ejemplos de tipos */
 .fire    { background-color: #FD7D24; color: white; }
@@ -31,3 +48,10 @@
 .steel   { background-color: #9EB7B8; color: black; }
 .fairy   { background-color: #FDB9E9; color: black; }
 .normal  { background-color: #A4ACAF; color: black; }
+
+@media (max-width: 300px) {
+  .types-container {
+  position: absolute;
+  width: 400px;
+}
+}

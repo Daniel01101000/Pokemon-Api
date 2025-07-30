@@ -1,9 +1,9 @@
 import { useEffect, useState } from 'react';
 import { fetchPokemons } from './index.js';
 import Header from './components/Header/Header.jsx';
-import Types from './components/Types/Types.jsx';
+import Cards from './components/Cards/Cards.jsx';
 import './index.css';
-import PokemonLogo from '/PokemonLogo.png';
+import PokemonLogo from '/Images/PokemonLogo.png';
 import shinySound from '/Audios/PokemonShiny.wav';
 
 function App() {
@@ -48,32 +48,8 @@ function App() {
   return (
     <>
       <Header onFilterChange={setTipoFiltro} />
-      <img src={PokemonLogo} alt="PokemonLogo" className='logo'/>
-
-      <div id="resultado">
-        {pokemonsFiltrados.map(pokemon => {
-          const paddedId = String(pokemon.id).padStart(3, '0');
-
-          const image = pokemon.isShiny
-            ? pokemon.shinySprite
-            : (pokemon.image ?? pokemon.sprites?.other?.['official-artwork']?.front_default ?? pokemon.sprites?.front_default ?? '');
-
-          return (
-            <div key={pokemon.id} className="pokemon">
-              <h3>{pokemon.name || 'Unknown'}</h3>
-              <img 
-                src={image} 
-                alt={pokemon.name || 'pokemon'}
-                onClick={() => toggleShiny(pokemon.id)}
-                style={{ cursor: 'pointer' }}
-                onError={(e) => { e.target.src = pokemon.image; }}
-              />
-              <p>#{paddedId}</p>
-              <Types types={pokemon.types || []} />
-            </div>
-          );
-        })}
-      </div>
+      <img src={PokemonLogo} alt="PokemonLogo" className='logo' />
+      <Cards pokemons={pokemonsFiltrados} toggleShiny={toggleShiny} />
     </>
   );
 }
