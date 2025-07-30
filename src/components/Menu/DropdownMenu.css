@@ -1,0 +1,60 @@
+.menu-desplegable {
+  position: fixed;
+  top: 100px;
+  left: 0;
+  right: 0;
+  max-height: 0;
+  overflow: hidden;
+  background-color: white;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  z-index: 999;
+  display: flex;
+  flex-direction: column;
+  transition: max-height 0.4s ease, opacity 0.4s ease;
+  opacity: 0;
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+
+.menu-desplegable.abierto {
+  max-height: 80vh;
+  opacity: 1;
+  overflow-y: auto;
+  padding: 20px;
+}
+
+.menu-desplegable .nav-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.menu-desplegable .nav-item {
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.menu-desplegable .nav-item > .btn-header {
+  display: block;
+  width: 100%;
+  padding: 12px 16px;
+  font-size: 16px;
+  text-align: center;
+  border-radius: 8px;
+  box-sizing: border-box;
+}
+
+.menu-desplegable::-webkit-scrollbar {
+  width: 6px;
+}
+
+.menu-desplegable::-webkit-scrollbar-thumb {
+  background-color: #ccc;
+  border-radius: 3px;
+}

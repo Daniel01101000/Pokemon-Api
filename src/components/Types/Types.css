@@ -1,0 +1,33 @@
+.types {
+  display: flex;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.type {
+  padding: 4px 8px;
+  border-radius: 12px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  text-transform: capitalize;
+}
+
+/* Ejemplos de tipos */
+.fire    { background-color: #FD7D24; color: white; }
+.water   { background-color: #4592C4; color: white; }
+.grass   { background-color: #9BCC50; color: white; }
+.electric { background-color: #EED535; color: black; }
+.ice     { background-color: #51C4E7; color: black; }
+.fighting { background-color: #D56723; color: white; }
+.poison  { background-color: #B97FC9; color: white; }
+.ground  { background-color: #F7DE3F; color: black; }
+.flying  { background-color: #3DC7EF; color: white; }
+.psychic { background-color: #F366B9; color: white; }
+.bug     { background-color: #729F3F; color: white; }
+.rock    { background-color: #A38C21; color: white; }
+.ghost   { background-color: #7B62A3; color: white; }
+.dragon  { background-color: #53A4CF; color: white; }
+.dark    { background-color: #707070; color: white; }
+.steel   { background-color: #9EB7B8; color: black; }
+.fairy   { background-color: #FDB9E9; color: black; }
+.normal  { background-color: #A4ACAF; color: black; }
